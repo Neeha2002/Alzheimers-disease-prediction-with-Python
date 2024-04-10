@@ -1,0 +1,35 @@
+{% extends 'doctorbase.html'%}
+{% load static %}
+{% block contents %}
+
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1><b>welcome to doctor page</b></h1>
+                                    <form action="/report/" method="post">
+                                        <table>
+                                        {% csrf_token %}
+                                       <tr><td>Name</td><td> <input type="text" name="name" value="{{object.name}}" readonly></br></td> </tr>
+                                        <tr><td> Age</td><td><input type="text" name="age" value="{{object.age}}" readonly></br></td> </tr>
+                                         <tr><td>symp</td><td><input type="text" name="symptomps" value="{{object.symptomps}}" readonly></br></td> </tr>
+                                        <tr><td> famd</td><td><input type="text" name="famldata" value="{{object.famldata}}" readonly></br></td> </tr>
+                                        <tr><td> chk-famd</td><td><input type="text" name="valid" ></br></td><td>True or False</td> </tr>
+                                       <tr><td>  mmse</td><td><input type="int" name="mmse"  min="0"></br></td>Int number </tr>
+                                         <tr><td><input type="submit" value="submit"></td> </tr>
+                                            </table>
+                                    </form>
+                                </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}
+

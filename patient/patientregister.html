@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1><b>welcome to patient page</b></h1>
+                                    <form action="/patientregister/" method="POST">
+                                    {% csrf_token %}
+                                    <table>
+                                          <tr><td style="color:blue">patient name</td><td>{{form.name}}</td></tr>
+                            <tr><td style="color:blue">Password</td><td>{{form.passwd}}</td></tr>
+                            <tr><td style="color:blue">confirmPassword</td><td>{{form.cwpasswd}}</td></tr>
+                            <tr><td style="color:blue">Email</td><td>{{form.email}}</td></tr>
+                            <tr><td style="color:blue">Mobile</td><td>{{form.mobileno}}</td></tr>
+                            <tr><td></td><td>{{form.status}}</td></tr>
+                                    </table>
+                                <input type="submit" value="submit">
+
+                          </form></h4></center>
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}

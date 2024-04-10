@@ -1,0 +1,59 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block contents %}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1><b>SVM Results</b></h1>
+                                   <div>
+									   <table>
+										   <tr>
+											   <th>Metrics</th>
+											   <th>Scores</th>
+										   </tr>
+										   <tr>
+											   <td>Accuracy</td><td>{{accuracy}}</td>
+										   </tr>
+										   <tr>
+											   <td>Precision</td><td>{{precision}}</td>
+										   </tr>
+										   <tr>
+											   <td>Recall</td><td>{{recall}}</td>
+										   </tr>
+										   <tr>
+											   <td>F1_Score</td><td>{{f1Score}}</td>
+										   </tr>
+									   </table>
+
+								   </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}

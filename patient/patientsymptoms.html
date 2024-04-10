@@ -1,0 +1,34 @@
+{% extends 'patientbase.html'%}
+{% load static %}
+{% block contents %}
+
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1><b>welcome to  patient PAGE</b></h1>
+                                 <table>
+                                    <form action="/patntsymptms/" method="post">
+                                        {% csrf_token %}
+                                        <tr><td> Name  :</td><td><input type="text" name="name"></td></tr>
+                                        <tr><td>Age    :</td><td><input type="number" name="age"></td></tr>
+                                       <tr><td> Mobile   :</td><td><input type="number" name="mobile"></td></tr>
+                                       <tr><td> Gender   :</td><td><input type="text"  name="gndr"></td></tr>
+                                        <tr><td>Family-data:</td><td><textarea id="txt2"  name="famly" rows="4" cols="20"></textarea></td></tr>
+                                        <tr><td> Sympts :</td><td><textarea id="txt1"  name="symp" rows="4" cols="20"></textarea></td></tr>
+                                        <tr><td><input type="submit" value="submit"></td></tr>
+                                    </form>
+                                  </table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}

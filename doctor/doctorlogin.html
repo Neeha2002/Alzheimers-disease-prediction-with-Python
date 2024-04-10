@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1><b>welcome to doctor page</b></h1>
+                                    <form action="/doctorlogincheck/" method="POST">
+                                 {% csrf_token %}<center>
+                                <table><tr><td style="color:blue">
+<!--                                <input  type="text" name="uname" placeholder="student Login" ><br/><br/>-->
+                                    <input type="email" name="email"  placeholder="Email">
+                                 <input  type="password" name="upasswd" placeholder="Password" ><br/><br/>
+                                    </td></tr></table> <input type="submit" style="color:#FF4500" value="submit"><br/>
+                                <br><br>New Doctor Register Here ?<a href="{% url 'doctorregister' %}" style="color:blue">Click Here</a>
+                           </center> </form> </h2>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}
+

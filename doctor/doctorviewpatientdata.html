@@ -1,0 +1,58 @@
+{% extends 'doctorbase.html'%}
+{% load static %}
+{% block contents %}
+<style>
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1><b>welcome to doctor page</b></h1>
+
+                                    <table border="2px">
+
+                    <tr>
+                <th>S.No</th>
+                <th >name</th>
+                <th>mobileno</th>
+                <th>gender</th>
+                <th>age</th>
+                <th>symptomps</th>
+
+                        <th>Treatment</th></tr>
+
+                         {% for i in object %}
+                         <tr>
+                         <td>{{ i.id }}</td>
+                         <td>{{ i.name }}</td>
+                         <td>{{ i.mobileno }}</td>
+                         <td>{{ i.gender }}</td>
+
+                         <td>{{ i.age }}</td>
+                         <td>{{ i.symptomps }}</td>
+                             <td style="color:red"> <a href="/addtreatment/?name={{ i.id }}" style="color: white;">Disease identification</a></td>
+
+                         </tr>
+                                    {% endfor %}
+                                    </table>
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}
+

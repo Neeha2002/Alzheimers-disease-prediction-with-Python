@@ -1,0 +1,47 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block contents %}
+
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1><b>welcome to  admin page</b></h1>
+                                     <table border="2px">
+
+                    <tr>
+                <th>S.No</th>
+                <th >name</th>
+                <th>Email</th>
+                <th>mobileno</th>
+                <th>status</th>
+                        <th>activate</th>
+
+                {% for i in object %}
+                         <tr>
+                         <td>{{ i.id }}</td>
+                         <td>{{ i.name }}</td>
+                         <td>{{ i.email }}</td>
+                         <td>{{ i.mobileno }}</td>
+                         <td>{{ i.status }}</td>
+                             {% if i.status == 'waiting' %}
+                                    <td style="color:orange"> <a href="/activatepatient/?pid={{ i.id }}">Activate</a></td>
+                                    {% else %}
+                                            <td style="color:orange"> Activated</td>
+                                            {% endif %}
+
+                                     </tr>
+                                    {% endfor %}
+                                     </table>  </h3></center>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+</header>
+
+{% endblock %}

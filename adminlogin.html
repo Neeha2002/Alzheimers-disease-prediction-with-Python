@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+
+
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1><b>Admin Login</b></h1>
+                                   <h3> <form action="/adminloginaction/" method="POST">
+                                         {% csrf_token %}
+                                        <label for="uname">username:</label></br>
+                                        <input type="text" name="username" value=""></br>
+                                        <label for="upasswd">password:</label></br>
+                                        <input type="password" name="password" value=""></br><br>
+                                        <input type="submit" value="submit"><br><br>
+
+                                    </form></h3>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+
+
+         {% endblock %}
+
+
+
